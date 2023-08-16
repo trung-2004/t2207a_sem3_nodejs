@@ -14,10 +14,17 @@ app.set("view engine", "ejs");
 // app.use(express.static(__dirname + '/public')); cách 1
 app.use(express.static('public'));
 // End
+// Start nhan du lieu tu form
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+// End nhan du lieu form
 
 const webrouter = require("./src/routes/web");
 app.use("/", webrouter);
 
 const userrouter = require("./src/routes/user");
 app.use("/auth", userrouter);
+
+const productrouter = require("./src/routes/product");
+app.use("/product", productrouter);
 
