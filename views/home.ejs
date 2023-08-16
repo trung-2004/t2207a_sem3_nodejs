@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Class Name: <%= className %></h2>
+    <h3>List Student: </h3>
+    <ul>
+        <% students.forEach(e=>{ %>
+            <li><%= e %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>

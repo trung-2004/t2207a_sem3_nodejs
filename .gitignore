@@ -1,0 +1,4 @@
+/node_modules
+/public/images
+/public/bootstrap
+package-lock.json
