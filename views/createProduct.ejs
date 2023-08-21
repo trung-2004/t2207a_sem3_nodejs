@@ -14,27 +14,23 @@
         <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4 pt-5 pb-5 rounded-5" style="background-color: #bcc6cf;">
-            <form action="/product/createProduct" method="post">
+            <form action="<%= product.url %>" method="post" enctype="multipart/form-data">
               <h2 class="d-flex justify-content-center text-light fw-normal mb-3">Create product</h2>
               <div class="input-group mb-3 ps-5 pe-5">
-                <span class="input-group-text bg-white" id="basic-addon1"><i class="fa-brands fa-product-hunt"></i></span>
-                <input type="text" name="name" class="form-control" placeholder="Name" aria-label="Name"
-                  aria-describedby="basic-addon1">
+                <span class="input-group-text bg-white"><i class="fa-brands fa-product-hunt"></i></span>
+                <input type="text" name="name" value="<%= product.name %>"  class="form-control" placeholder="Name">
               </div>
               <div class="input-group mb-3 ps-5 pe-5">
-                <span class="input-group-text bg-white" id="basic-addon1"><i class="fa-solid fa-money-bill"></i></span>
-                <input type="number" name="price" class="form-control" placeholder="Price" aria-label="Price"
-                  aria-describedby="basic-addon1">
+                <span class="input-group-text bg-white"><i class="fa-solid fa-money-bill"></i></span>
+                <input type="number" name="price" value="<%= product.price %>"  class="form-control" placeholder="Price">
               </div>
               <div class="input-group mb-3 ps-5 pe-5">
-                <span class="input-group-text bg-white" id="basic-addon1"><i class="fa-solid fa-audio-description"></i></span>
-                <input type="text" name="description" class="form-control" placeholder="Description" aria-label="Description"
-                  aria-describedby="basic-addon1">
+                <span class="input-group-text bg-white"><i class="fa-solid fa-audio-description"></i></span>
+                <textarea type="text" name="description" class="form-control" placeholder="Description"><%= product.description %></textarea>
               </div>
               <div class="input-group mb-3 ps-5 pe-5">
-                <span class="input-group-text bg-white" id="basic-addon1"><i class="fa-solid fa-image"></i></span>
-                <input type="file" class="form-control" name="image" placeholder="Image" aria-label="Image"
-                  aria-describedby="basic-addon1">
+                <span class="input-group-text bg-white"><i class="fa-solid fa-image"></i></span>
+                <input type="file" class="form-control" name="image" placeholder="Image">
               </div>
               <div class="form-check d-flex justify-content-center mb-3">
                 <button class="btn btn-primary rounded-pill ps-5 pe-5" style="background-color: #3da0d2;" type="submit">CREATE PRODUCT</button>

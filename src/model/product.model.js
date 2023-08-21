@@ -6,19 +6,18 @@ const product_schema = new mongoose.Schema({// mongodb tu dong them id
         type: String,
         required: [true, 'Truong nay bat buoc phai nhap'],
         unique: true,
+        minLength: 10,
+        maxLength: 255,
     },
     price: {
         type: Number,
         required: [true, 'Truong nay bat buoc phai nhap'],
-        minLength: [1, 'Gia tri toi thieu la 1'],
+        minLength: [0, 'Gia tri toi thieu la 0'],
     },
-    description: {
-        type: String,
-        required: [true, 'Truong nay bat buoc phai nhap'],
-    },
+    description: String,
     image: {
-        type: String,
-        required: [true, 'Truong nay bat buoc phai nhap'],
+        data: String,
+        contentType: String,
     },
 });
 module.exports = mongoose.model("Product", product_schema);
