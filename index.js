@@ -28,3 +28,6 @@ app.use("/auth", userrouter);
 const productrouter = require("./src/routes/product");
 app.use("/product", productrouter);
 
+const categoryrouter = require("./src/routes/category.routes");
+app.use("/category", categoryrouter);
+

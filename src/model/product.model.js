@@ -15,7 +15,7 @@ const product_schema = new mongoose.Schema({// mongodb tu dong them id
         minLength: [0, 'Gia tri toi thieu la 0'],
     },
     description: String,
-    image: {
+    image: {    
         data: String,
         contentType: String,
     },
