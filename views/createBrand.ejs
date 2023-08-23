@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Brand</title>
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container position-absolute top-50 start-50 translate-middle">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4 pt-5 pb-5 rounded-5" style="background-color: #bcc6cf;">
+            <form action="<%= brand.url %>" method="post">
+              <h2 class="d-flex justify-content-center text-light fw-normal mb-3">Create brand</h2>
+              <div class="input-group mb-3 ps-5 pe-5">
+                <span class="input-group-text bg-white"><i class="fa-brands fa-product-hunt"></i></span>
+                <input type="text" name="name" value="<%= brand.name %>"  class="form-control" placeholder="Name">
+              </div>
+              <div class="input-group mb-3 ps-5 pe-5">
+                <span class="input-group-text bg-white"><i class="fa-solid fa-audio-description"></i></span>
+                <textarea type="text" name="description" class="form-control" placeholder="Description"><%= brand.description %></textarea>
+              </div>
+              <div class="form-check d-flex justify-content-center mb-3">
+                <button class="btn btn-primary rounded-pill ps-5 pe-5" style="background-color: #3da0d2;" type="submit">CREATE BRAND</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4"></div>
+        </div>
+      </div>
+</body>
+</html>

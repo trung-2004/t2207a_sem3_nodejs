@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Brand</title>
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <h2>List Brand</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% brands.forEach(e=>{  %>
+                        <tr>
+                            <td><%= e.name %></td>
+                            <td><%= e.description %></td>
+                            <td>
+                                <a href="/brand/editBrand/<%= e._id %>">Edit</a>
+                                <a onclick="return confirm('Xác nhận xoá sản phẩm <%= e.name %>')" href="/brand/deleteBrand/<%= e._id %>">Delete</a>
+                            </td>
+                        </tr>        
+                    <% }) %>
+                </tbody>
+            </table>
+            <a href="/brand/createBrand" class="btn btn-success">Add Brand</a>
+        </div>
+    </section>
+
+</body>
+
+</html>

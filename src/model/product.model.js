@@ -19,5 +19,13 @@ const product_schema = new mongoose.Schema({// mongodb tu dong them id
         data: String,
         contentType: String,
     },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category'
+    },
+    brand: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Brand'
+    }
 });
 module.exports = mongoose.model("Product", product_schema);

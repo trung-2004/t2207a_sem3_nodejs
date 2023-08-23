@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const category_schema = new mongoose.Schema({
+const brand_schema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Truong nay bat buoc phai nhap'],
@@ -11,4 +11,4 @@ const category_schema = new mongoose.Schema({
         ref: 'Product'
     }]
 });
-module.exports = mongoose.model('Category', category_schema);
+module.exports = mongoose.model('Brand', brand_schema);

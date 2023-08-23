@@ -21,6 +21,8 @@
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Image</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Brand</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -38,8 +40,14 @@
                                 <img src="data:<%= products[i].image.contentType %>;base64,<%= products[i].image.data %>"" style="height: 100px; width: 100px; object-fit: contain;" >
                             </td>
                             <td>
-                                <a href="/product/editProduct/<%= products[i]._id %>">Edit</a>
-                                <a onclick="return confirm('Xác nhận xoá sản phẩm <%= products[i].name %>')" href="/product/deleteProduct/<%= products[i]._id %>">Delete</a>
+                                <%= products[i].category.name %>
+                            </td>
+                            <td>
+                                <%= products[i].brand.name %>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" href="/product/editProduct/<%= products[i]._id %>">Edit</a>
+                                <a class="btn btn-danger" onclick="return confirm('Xác nhận xoá sản phẩm <%= products[i].name %>')" href="/product/deleteProduct/<%= products[i]._id %>">Delete</a>
                             </td>
                         </tr>
                       <% } %>
