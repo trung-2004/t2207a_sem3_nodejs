@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -22,20 +25,25 @@
             <span class="input-group-text bg-white"><i class="fa-brands fa-product-hunt"></i></span>
             <input type="text" name="name" value="<%= product.name %>" class="form-control" placeholder="Name">
           </div>
+
           <div class="input-group mb-3 ps-5 pe-5">
             <span class="input-group-text bg-white"><i class="fa-brands fa-product-hunt"></i></span>
-            <select class="form-select" aria-label="Default select example" name="category">
-              <% categories.forEach(c=>{  %>
-                <option value="<%= c._id %>" <%= c._id == product.category.id ? 'selected' : ''%>><%= c.name %></option>    
-              <% }) %>
+            <select class="form-select" id="category" aria-label="Default select example" name="category">
+              <% categories.forEach(c=>{ %>
+                <option value="<%= c._id %>">
+                  <%= c.name %>
+                </option>
+                <% }) %>
             </select>
           </div>
           <div class="input-group mb-3 ps-5 pe-5">
             <span class="input-group-text bg-white"><i class="fa-brands fa-product-hunt"></i></span>
             <select class="form-select" aria-label="Default select example" name="brand">
-              <% brands.forEach(b=>{  %>
-                <option value="<%= b._id %>" <%= b._id == product.brand.id ? 'selected' : ''%>><%= b.name %></option>    
-              <% }) %>
+              <% brands.forEach(b=>{ %>
+                <option value="<%= b._id %>">
+                  <%= b.name %>
+                </option>
+                <% }) %>
             </select>
           </div>
           <div class="input-group mb-3 ps-5 pe-5">
@@ -60,6 +68,14 @@
       <div class="col-lg-4"></div>
     </div>
   </div>
+  <script>
+    $(document).ready(function () {
+      $('#category').select2();
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+    integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

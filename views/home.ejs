@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="/css/app.css" rel="stylesheet" type="text/css">
+
     <title>Home</title>
 </head>
+
 <body>
-    <h2>Class Name: <%= className %></h2>
-    <h3>List Student: </h3>
-    <ul>
-        <% students.forEach(e=>{ %>
-            <li><%= e %></li>
-        <% }) %>
-    </ul>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/product/products">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/category/categories">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/brand/brands">Brands</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/auth/register">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h2>Class Name: <%= className %>
+        </h2>
+        <h3>List Student: </h3>
+        <ul>
+            <% students.forEach(e=>{ %>
+                <li>
+                    <%= e %>
+                </li>
+                <% }) %>
+        </ul>
+    </div>
+
 </body>
+
 </html>

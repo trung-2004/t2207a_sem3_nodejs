@@ -24,6 +24,18 @@ const user_schema = new mongoose.Schema({// mongodb tu dong them id
     password: {
         type: String,
         required: true,
+    },
+    role: {
+        type: String,
+        required: true,
+        validate: {
+            validator: (v) => {
+                if(v == "admin" || v == "user")
+                    return true;
+                return false;
+            },
+            message: t => `User has invalid role.`
+        }
     }
 });
 module.exports = mongoose.model("User", user_schema);

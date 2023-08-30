@@ -5,6 +5,21 @@ const port = process.env.PORT || 3000;
 app.listen(port, function() { // callback function
     console.log("Server is running...")
 })
+// Start config session
+const session = require("express-session");
+app.use(
+    session({
+        resave: true,// luu lai
+        saveUninitialized: true,
+        secret:"t2207atrung", // key bi mat
+        cookie: {
+            maxAge: 3600000, // miliseconds
+            secure: false,// khoa http only
+        }
+    })
+);
+// End config session
+
 // Start connect db
 require("./src/db/database");// phai goi truoc su dung router
 // End connect db
